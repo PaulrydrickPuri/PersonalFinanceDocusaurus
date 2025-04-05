@@ -1,43 +1,42 @@
-import type {ReactNode} from 'react';
+import React from 'react';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
-
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <h1 className="hero__title">Welcome to Personal Finance Tracker</h1>
+        <p className="hero__subtitle">
+          Manage your money with ease and get personalized insights using AI.
+        </p>
         <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
+          <a className="button button--secondary button--lg" href="/docs/setup">
+            Get Started
+          </a>
         </div>
       </div>
     </header>
   );
 }
 
-export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+export default function Home(): JSX.Element {
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title="Home"
+      description="Personal Finance Tracker with AI-powered budgeting tools"
+    >
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <section className="padding-vert--lg">
+          <div className="container">
+            <p>
+              Explore our documentation to set up your tracker, learn how to use
+              it, and leverage AI for smarter financial decisions.
+            </p>
+          </div>
+        </section>
       </main>
     </Layout>
   );
